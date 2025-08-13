@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const SignIn = () => {
-  //const [userInput, setUserInput] = useState();
+  const [userInput, setUserInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInput = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="flex flex-col h-screen space-y-2 justify-center items-center">
       <h1 className="text-3xl">Sign In</h1>
-      <form className="flex flex-col space-y-2">
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
         <label htmlFor="email">Email:</label>
         <input
           className="border rounded-lg pl-4"
+          onChange={handleInput}
+          value={userInput.email}
           type="email"
           id="email"
           name="email"
@@ -19,6 +32,8 @@ export const SignIn = () => {
         <label htmlFor="password">Password:</label>
         <input
           className="border rounded-lg pl-4"
+          onChange={handleInput}
+          value={userInput.password}
           type="password"
           id="password"
           name="password"
