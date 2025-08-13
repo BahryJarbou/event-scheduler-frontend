@@ -1,12 +1,21 @@
+import Button from "daisyui/components/button";
+import { Link } from "react-router";
+
 const NavBar = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">Event Scheduler</a>
+        <Link to={"/"}>
+          <button className="btn btn-ghost text-xl">Event Scheduler</button>
+        </Link>
       </div>
       <div className="navbar-end gap-4">
-        <a className="btn">Sign In</a>
-        <a className="btn">Sign Up</a>
+        <Link to={"/signIn"}>
+          <button className="btn">Sign In</button>
+        </Link>
+        <Link to={"/signUp"}>
+          <button className="btn">Sign Up</button>
+        </Link>
       </div>
     </div>
   );
