@@ -6,6 +6,8 @@ import SignUp from "./pages/signUp";
 import ProtectedLayout from "./layouts/protectedLayout";
 import UserEvents from "./components/userEvents";
 import EventDetails from "./pages/eventDetails";
+import CreateEvent from "./pages/createEvent";
+
 function App() {
   return (
     <Routes>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/protected" element={<ProtectedLayout />}>
           <Route index element={<UserEvents />} />
           <Route path="/protected/:eventID" element={<EventDetails />} />
+          <Route path="/protected/createEvent" element={<CreateEvent />} />
         </Route>
       </Route>
     </Routes>
