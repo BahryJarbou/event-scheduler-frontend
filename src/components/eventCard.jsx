@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router";
 const EventCard = ({ event }) => {
   return (
     <div className="card w-96 bg-base-100 card-xl shadow-md">
@@ -7,7 +9,9 @@ const EventCard = ({ event }) => {
         <p>{event.description}</p>
         <p>{event.location}</p>
         <div className="justify-end card-actions">
-          <button className="btn btn-primary">See More Details</button>
+          <Link to={`/protected/${event.id}`}>
+            <button className="btn btn-primary">See More Details</button>
+          </Link>
         </div>
       </div>
     </div>
