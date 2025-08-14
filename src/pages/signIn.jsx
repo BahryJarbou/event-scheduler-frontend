@@ -1,3 +1,4 @@
+
 import { Navigate, useNavigate, Link } from "react-router";
 import { useState } from "react";
 import { AuthContext } from "../context/authContext";
@@ -10,7 +11,6 @@ export const SignIn = () => {
     email: "",
     password: "",
   });
-
   const handleSubmit = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
@@ -82,6 +82,7 @@ export const SignIn = () => {
               [e.target.name]: e.target.value,
             }))
           }
+
           type="password"
           id="password"
           name="password"
