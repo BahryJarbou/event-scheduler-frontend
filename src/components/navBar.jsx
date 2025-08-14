@@ -34,6 +34,11 @@ const NavBar = () => {
             <button className="btn">Sign Up</button>
           </Link>
         )}
+        {isAuthenticated && (
+          <Link to={"protected/createEvent"}>
+            <button className="btn">Create Event</button>
+          </Link>
+        )}
       </div>
     </div>
   );
